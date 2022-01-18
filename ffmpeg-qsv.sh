@@ -41,8 +41,10 @@ make -j"$(nproc)"
 sudo make install
 
 # Intel-Media-Driverで生成されたライブラリをffmpegで使用するために移動
-sudo mkdir -p /usr/local/lib/dri
+sudo mkdir -p /usr/local/lib/dri 
 sudo cp ~/git/build_media/media_driver/iHD_drv_video.so /usr/local/lib/dri/
+
+
 
 # Intel-Media-SDKのインストール
 cd ~/git
@@ -64,7 +66,7 @@ cd ~/git
 git clone https://github.com/FFmpeg/FFmpeg
 cd FFmpeg
 PKG_CONFIG_PATH=/opt/intel/mediasdk/lib/pkgconfig
-./configure  --prefix=/usr/local/ffmpeg  --extra-cflags="-I/opt/intel/mediasdk/include"  --extra-ldflags="-L/opt/intel/mediasdk/lib"  --extra-ldflags="-L/opt/intel/mediasdk/plugins"  --enable-libmfx  --enable-vaapi  --enable-opencl  --disable-debug  --enable-libvorbis  --enable-libvpx  --enable-libdrm  --enable-gpl  --cpu=native  --enable-libfdk-aac  --enable-libx264  --enable-libx265  --extra-libs=-lpthread  --enable-nonfree --enable-libmp3lame
+./configure  --prefix=/usr/local/ffmpeg  --extra-cflags="-I/opt/intel/mediasdk/include"  --extra-ldflags="-L/opt/intel/mediasdk/lib"  --extra-ldflags="-L/opt/intel/mediasdk/plugins"  --enable-libmfx  --enable-vaapi  --enable-opencl  --disable-debug  --enable-libvorbis  --enable-libvpx  --enable-libdrm  --enable-gpl  --cpu=native  --enable-libfdk-aac  --enable-libx264  --enable-libx265  --extra-libs=-lpthread  --enable-nonfree --enable-libmp3lame --enable-libfreetype
 make
 sudo make install
 
