@@ -5,7 +5,10 @@
 sudo apt update
 sudo apt dist-upgrade
 # 必要パッケージのインストール
-sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev libmp3lame-dev
+sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox \
+libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev \
+ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
+libmp3lame-dev libpulse-dev
 
 # libvaのインストール
 mkdir ~/git && cd ~/git
@@ -66,7 +69,9 @@ cd ~/git
 git clone https://github.com/FFmpeg/FFmpeg
 cd FFmpeg
 PKG_CONFIG_PATH=/opt/intel/mediasdk/lib/pkgconfig
-./configure  --prefix=/usr/local/ffmpeg  --extra-cflags="-I/opt/intel/mediasdk/include"  --extra-ldflags="-L/opt/intel/mediasdk/lib"  --extra-ldflags="-L/opt/intel/mediasdk/plugins"  --enable-libmfx  --enable-vaapi  --enable-opencl  --disable-debug  --enable-libvorbis  --enable-libvpx  --enable-libdrm  --enable-gpl  --cpu=native  --enable-libfdk-aac  --enable-libx264  --enable-libx265  --extra-libs=-lpthread  --enable-nonfree --enable-libmp3lame --enable-libfreetype
+./configure  --prefix=/usr/local/ffmpeg  --extra-cflags="-I/opt/intel/mediasdk/include"  --extra-ldflags="-L/opt/intel/mediasdk/lib"  --extra-ldflags="-L/opt/intel/mediasdk/plugins"  \
+--enable-libmfx  --enable-vaapi  --enable-opencl  --disable-debug  --enable-libvorbis  --enable-libvpx  --enable-libdrm  --enable-gpl  --cpu=native  --enable-libfdk-aac  --enable-libx264 \
+--enable-libx265  --extra-libs=-lpthread  --enable-nonfree --enable-libmp3lame --enable-libfreetype --enable-libpulse
 make
 sudo make install
 
