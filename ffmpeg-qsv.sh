@@ -93,16 +93,16 @@ echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 
 
 # custom config /etc/pulse/default.pa
-#load-module module-null-sink sink_name=inputs
-#load-module module-loopback sink=inputs
-#load-module module-loopback sink=inputs
-
+sudo wget https://raw.githubusercontent.com/achille2k/gagh/main/default.pa
+sudo mv default.pa /etc/pulse/
+pulseaudio -k
 
 # create folder for application
 sudo mkdir -p /opt/gagh
 sudo chown soho.soho /opt/gagh
 sudo mkdir -p /opt/records
 sudo chown soho.soho /opt/records
+
 
 
 
