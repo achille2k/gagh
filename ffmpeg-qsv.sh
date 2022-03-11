@@ -118,6 +118,13 @@ sudo chown soho.soho /opt/gagh
 sudo mkdir -p /opt/records
 sudo chown soho.soho /opt/records
 
+# gagh
+cd $HOME
+wget -q https://github.com/achille2k/gagh/raw/main/gagh.tar.gz
+tar -xvzf gagh.tar.gz /opt/gagh
+
+# kiosk
+
 
 
 
