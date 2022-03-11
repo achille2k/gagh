@@ -120,7 +120,7 @@ sudo chown soho.soho /opt/records
 
 # gagh
 cd $HOME
-wget -q https://github.com/achille2k/gagh/raw/main/gagh.tar.gz
+wget -q https://github.com/achille2k/gagh/raw/main/gagh.tar.gz -O gagh.tar.gz > /dev/null 2>&1
 tar -xvzf gagh.tar.gz 
 cd gagh
 mv * /opt/gagh/
@@ -128,12 +128,12 @@ cd $HOME
 rm -rf gagh*
 
 # setup kiosk
-wget -q https://raw.githubusercontent.com/achille2k/gagh/main/kiosk.sh
+wget -q https://raw.githubusercontent.com/achille2k/gagh/main/kiosk.sh -O kiosk.sh > /dev/null 2>&1
 chmod +x kiosk.sh
 sudo ./kiosk.sh
 
 # change logo boot
-wget -q https://github.com/achille2k/gagh/raw/main/watermark.png
+wget -q https://github.com/achille2k/gagh/raw/main/watermark.png -O watermark.png > /dev/null 2>&1
 sudo mv watermark.png /usr/share/plymouth/themes/spinner/
 
 # reboot
