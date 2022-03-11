@@ -15,6 +15,7 @@ sudo apt dist-upgrade
 sudo apt install apt-transport-https 
 sudo apt update
 sudo apt install dotnet-runtime-5.0
+sudo rm packages-microsoft-prod.deb
 
 # libva
 mkdir ~/git && cd ~/git
@@ -135,6 +136,10 @@ sudo ./kiosk.sh
 # change logo boot
 wget -q https://github.com/achille2k/gagh/raw/main/watermark.png -O watermark.png > /dev/null 2>&1
 sudo mv watermark.png /usr/share/plymouth/themes/spinner/
+
+# excute sudo no pass
+# sudo visudo 
+# soho ALL=(ALL) NOPASSWD: ALL
 
 # reboot
 sudo reboot
