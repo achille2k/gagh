@@ -5,7 +5,7 @@
 sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox \
 libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev \
 ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
-libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim wget
+libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim
 
 # dotnet-runtime-5.0
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -126,7 +126,14 @@ cd gagh
 mv * /opt/gagh/
 cd $HOME
 rm -rf gagh*
-# kiosk
+
+# setup kiosk
+wget -q https://raw.githubusercontent.com/achille2k/gagh/main/kiosk.sh
+chmod +x kiosk.sh
+sudo ./kiosk.sh
+
+# reboot
+sudo reboot
 
 
 

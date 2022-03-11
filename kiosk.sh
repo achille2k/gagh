@@ -80,3 +80,15 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
 
 </openbox_menu>
 EOF
+
+#disable autoupdate
+mv /etc/apt/apt.conf.d/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades.old
+cat > /etc/apt/apt.conf.d/20auto-upgrades <<EOF
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Download-Upgradeable-Packages "0";
+APT::Periodic::AutocleanInterval "0";
+APT::Periodic::Unattended-Upgrade "1";
+EOF
+
+# Turn off Gnome Notifications 
+gsettings set org.gnome.desktop.notifications show-banners false
