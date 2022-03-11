@@ -100,16 +100,16 @@ pulseaudio -k
 # install font
 FONT_DIR="$HOME/.local/share/fonts/Microsoft/TrueType/Segoe UI/"
 mkdir -p "$FONT_DIR"
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeui.ttf?raw=true -O "$FONT_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuib.ttf?raw=true -O "$FONT_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuii.ttf?raw=true -O "$FONT_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuiz.ttf?raw=true -O "$FONT_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuil.ttf?raw=true -O "$FONT_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguili.ttf?raw=true -O "$FONT_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuisl.ttf?raw=true -O "$FONT_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisli.ttf?raw=true -O "$FONT_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisb.ttf?raw=true -O "$FONT_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
-wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisbi.ttf?raw=true -O "$FONT_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/segoeui.ttf -O "$FONT_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/segoeuib.ttf -O "$FONT_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/segoeuii.ttf -O "$FONT_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/segoeuiz.ttf -O "$FONT_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/segoeuil.ttf -O "$FONT_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/seguili.ttf -O "$FONT_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/segoeuisl.ttf -O "$FONT_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/seguisli.ttf -O "$FONT_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/seguisb.ttf -O "$FONT_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
+wget -q https://github.com/achille2k/gagh/raw/main/fonts/seguisbi.ttf -O "$FONT_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
 fc-cache -f "$FONT_DIR"
 
 # create folder for application
