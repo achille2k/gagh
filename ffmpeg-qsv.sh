@@ -132,6 +132,10 @@ wget -q https://raw.githubusercontent.com/achille2k/gagh/main/kiosk.sh
 chmod +x kiosk.sh
 sudo ./kiosk.sh
 
+# change logo boot
+wget -q https://github.com/achille2k/gagh/raw/main/watermark.png
+sudo mv watermark.png /usr/share/plymouth/themes/spinner/
+
 # reboot
 sudo reboot
 
