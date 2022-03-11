@@ -1,6 +1,12 @@
 #!/bin/bash
 # Taken from: https://red-full-moon.com/make-hevc-qsv-env-first-half/
 
+# lib and app
+sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox \
+libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev \
+ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
+libmp3lame-dev libpulse-dev libvlc-dev pavucontrol vim wget
+
 # dotnet-runtime-5.0
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
@@ -9,12 +15,6 @@ sudo apt dist-upgrade
 sudo apt install apt-transport-https 
 sudo apt update
 sudo apt install dotnet-runtime-5.0
-
-# lib and app
-sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox \
-libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev \
-ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
-libmp3lame-dev libpulse-dev libvlc-dev pavucontrol vim
 
 # libva
 mkdir ~/git && cd ~/git
@@ -93,9 +93,24 @@ echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 
 
 # custom config /etc/pulse/default.pa
-sudo wget https://raw.githubusercontent.com/achille2k/gagh/main/default.pa
-sudo mv default.pa /etc/pulse/
+sudo wget -q https://raw.githubusercontent.com/achille2k/gagh/main/default.pa -O /etc/pulse/default.pa > /dev/null 2>&1
+#sudo mv default.pa 
 pulseaudio -k
+
+# install font
+FONT_DIR="$HOME/.local/share/fonts/Microsoft/TrueType/Segoe UI/"
+mkdir -p "$FONT_DIR"
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeui.ttf?raw=true -O "$FONT_DIR"/segoeui.ttf > /dev/null 2>&1 # regular
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuib.ttf?raw=true -O "$FONT_DIR"/segoeuib.ttf > /dev/null 2>&1 # bold
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuii.ttf?raw=true -O "$FONT_DIR"/segoeuii.ttf > /dev/null 2>&1 # italic
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuiz.ttf?raw=true -O "$FONT_DIR"/segoeuiz.ttf > /dev/null 2>&1 # bold italic
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuil.ttf?raw=true -O "$FONT_DIR"/segoeuil.ttf > /dev/null 2>&1 # light
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguili.ttf?raw=true -O "$FONT_DIR"/seguili.ttf > /dev/null 2>&1 # light italic
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/segoeuisl.ttf?raw=true -O "$FONT_DIR"/segoeuisl.ttf > /dev/null 2>&1 # semilight
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisli.ttf?raw=true -O "$FONT_DIR"/seguisli.ttf > /dev/null 2>&1 # semilight italic
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisb.ttf?raw=true -O "$FONT_DIR"/seguisb.ttf > /dev/null 2>&1 # semibold
+wget -q https://github.com/mrbvrz/segoe-ui/raw/master/font/seguisbi.ttf?raw=true -O "$FONT_DIR"/seguisbi.ttf > /dev/null 2>&1 # semibold italic
+fc-cache -f "$FONT_DIR"
 
 # create folder for application
 sudo mkdir -p /opt/gagh
