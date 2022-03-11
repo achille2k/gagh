@@ -7,6 +7,9 @@ libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvo
 ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
 libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim
 
+# excute sudo without pass
+echo -e '\nsoho ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers
+
 # dotnet-runtime-5.0
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
@@ -137,9 +140,8 @@ sudo ./kiosk.sh
 wget -q https://github.com/achille2k/gagh/raw/main/watermark.png -O watermark.png > /dev/null 2>&1
 sudo mv watermark.png /usr/share/plymouth/themes/spinner/
 
-# excute sudo no pass
-# sudo visudo 
-# soho ALL=(ALL) NOPASSWD: ALL
+# disable auto datetime
+sudo timedatectl set-ntp 0
 
 # reboot
 sudo reboot
