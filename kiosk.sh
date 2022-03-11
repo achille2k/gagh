@@ -3,7 +3,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 cat > /etc/xdg/openbox/autostart <<EOF
 #
 # These things are run when an Openbox X Session is started.
-# You may place a similar script in $HOME/.config/openbox/autostart
+# You may place a similar script in \$HOME/.config/openbox/autostart
 # to run user-specific things.
 #
 
@@ -18,7 +18,7 @@ cat > /etc/xdg/openbox/autostart <<EOF
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-xmodmap -pke | grep -E "Alt|Super|Control" | cut -f1 -d"=" | while read line; do xmodmap -e "$line = "; done
+xmodmap -pke | grep -E "Alt|Super|Control" | cut -f1 -d"=" | while read line; do xmodmap -e "\$line = "; done
 /opt/gagh/GAGH &
 EOF
 
