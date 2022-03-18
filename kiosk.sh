@@ -18,8 +18,6 @@ cat > /etc/xdg/openbox/autostart <<EOF
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-#
-xmodmap -pke | grep -E "Alt|Super" | cut -f1 -d"=" | while read line; do xmodmap -e "\$line = "; done
 # 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -88,7 +86,10 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
 </openbox_menu>
 EOF
 
-#disable autoupdate
+# disable key
+sudo wget -q https://raw.githubusercontent.com/achille2k/gagh/main/rc.xml -O /etc/xdg/openbox/rc.xml > /dev/null 2>&1
+
+# disable autoupdate
 mv /etc/apt/apt.conf.d/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades.old
 cat > /etc/apt/apt.conf.d/20auto-upgrades <<EOF
 APT::Periodic::Update-Package-Lists "0";
