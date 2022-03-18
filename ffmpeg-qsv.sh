@@ -1,11 +1,16 @@
 #!/bin/bash
 # Taken from: https://red-full-moon.com/make-hevc-qsv-env-first-half/
 
+# Telex
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt-get update
+sudo apt install ibus-bamboo
+
 # lib and app
 sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox \
 libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev \
 ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
-libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim
+libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim growisofs dvd+rw-tools ibus-bamboo
 
 # excute sudo without pass
 echo -e '\nsoho ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers
@@ -128,6 +133,7 @@ wget -q https://github.com/achille2k/gagh/raw/main/gagh.tar.gz -O gagh.tar.gz > 
 tar -xvzf gagh.tar.gz 
 cd gagh
 mv * /opt/gagh/
+cp /opt/gagh/config/* /opt/records/
 cd $HOME
 rm -rf gagh*
 

@@ -18,7 +18,14 @@ cat > /etc/xdg/openbox/autostart <<EOF
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
-xmodmap -pke | grep -E "Alt|Super|Control" | cut -f1 -d"=" | while read line; do xmodmap -e "\$line = "; done
+#
+xmodmap -pke | grep -E "Alt|Super" | cut -f1 -d"=" | while read line; do xmodmap -e "\$line = "; done
+# 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -d -x
+# 
 /opt/gagh/GAGH &
 EOF
 
