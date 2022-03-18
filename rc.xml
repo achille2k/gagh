@@ -193,7 +193,7 @@
   <chainQuitKey>C-g</chainQuitKey>
 
   <!-- Keybindings for desktop switching -->
-  <!-- keybind key="C-A-Left">
+  <keybind key="C-A-Left">
     <action name="GoToDesktop"><to>left</to><wrap>no</wrap></action>
   </keybind>
   <keybind key="C-A-Right">
@@ -231,12 +231,12 @@
   </keybind>
   <keybind key="W-d">
     <action name="ToggleShowDesktop"/>
-  </keybind -->
+  </keybind>
 
   <!-- Keybindings for windows -->
   <!-- keybind key="A-F4">
     <action name="Close"/>
-  </keybind>
+  </keybind -->
   <keybind key="A-Escape">
     <action name="Lower"/>
     <action name="FocusToBottom"/>
@@ -244,7 +244,7 @@
   </keybind>
   <keybind key="A-space">
     <action name="ShowMenu"><menu>client-menu</menu></action>
-  </keybind -->
+  </keybind>
   <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
   <!-- keybind key="A-Print">
     <action name="Execute"><command>scrot -s</command></action>
@@ -269,7 +269,7 @@
       </finalactions>
     </action>
   </keybind>
-  <!-- keybind key="C-A-Tab">
+  <keybind key="C-A-Tab">
     <action name="NextWindow">
       <panels>yes</panels><desktop>yes</desktop>
       <finalactions>
@@ -278,10 +278,10 @@
         <action name="Unshade"/>
       </finalactions>
     </action>
-  </keybind -->
+  </keybind>
 
   <!-- Keybindings for window switching with the arrow keys -->
-  <!-- keybind key="W-S-Right">
+  <keybind key="W-S-Right">
     <action name="DirectionalCycleWindows">
       <direction>right</direction>
     </action>
@@ -300,10 +300,10 @@
     <action name="DirectionalCycleWindows">
       <direction>down</direction>
     </action>
-  </keybind -->
+  </keybind>
 
   <!-- Keybindings for running applications -->
-  <!-- keybind key="W-e">
+  <keybind key="W-e">
     <action name="Execute">
       <startupnotify>
         <enabled>true</enabled>
@@ -311,7 +311,7 @@
       </startupnotify>
       <command>kfmclient openProfile filemanagement</command>
     </action>
-  </keybind -->
+  </keybind>
   <!-- Launch scrot when Print is pressed -->
   <!-- keybind key="Print">
     <action name="Execute"><command>scrot</command></action>
