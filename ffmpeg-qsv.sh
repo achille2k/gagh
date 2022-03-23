@@ -94,8 +94,6 @@ sudo make install
 # vaapi
 /usr/local/ffmpeg/bin/ffmpeg -encoders 2>/dev/null | grep vaapi
 
-sudo apt remove ffmpeg
-
 # set environment
 sudo rm -f -- /etc/environment
 echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/ffmpeg/bin"' | sudo tee -a /etc/environment
@@ -138,7 +136,7 @@ cd $HOME
 rm -rf gagh*
 
 # setup kiosk
-wget -q https://raw.githubusercontent.com/achille2k/gagh/main/kiosk.sh -O kiosk.sh > /dev/null 2>&1
+wget -q https://raw.githubusercontent.com/achille2k/gagh/main/kiosk.sh -O "$HOME"/kiosk.sh > /dev/null 2>&1
 chmod +x kiosk.sh
 sudo ./kiosk.sh
 
