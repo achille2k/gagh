@@ -23,7 +23,9 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -d -x
-# 
+#
+#/usr/lib/gnome-volume-manager/gnome-volume-manager --sm-disable
+#
 /opt/gagh/GAGH &
 EOF
 
@@ -90,13 +92,10 @@ EOF
 sudo wget -q https://raw.githubusercontent.com/achille2k/gagh/main/rc.xml -O /etc/xdg/openbox/rc.xml > /dev/null 2>&1
 
 # disable autoupdate
-mv /etc/apt/apt.conf.d/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades.old
+rm -rf /etc/apt/apt.conf.d/20auto-upgrades
 cat > /etc/apt/apt.conf.d/20auto-upgrades <<EOF
 APT::Periodic::Update-Package-Lists "0";
 APT::Periodic::Download-Upgradeable-Packages "0";
 APT::Periodic::AutocleanInterval "0";
 APT::Periodic::Unattended-Upgrade "1";
 EOF
-
-# Turn off Gnome Notifications 
-gsettings set org.gnome.desktop.notifications show-banners false
