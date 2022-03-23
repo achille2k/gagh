@@ -147,6 +147,12 @@ sudo mv watermark.png /usr/share/plymouth/themes/spinner/
 # disable auto datetime
 sudo timedatectl set-ntp 0
 
+# auto mount usb 4 openbox
+#https://github.com/raamsri/automount-usb
+
+# remove git
+rm -rf git
+
 # reboot
 sudo reboot
 
