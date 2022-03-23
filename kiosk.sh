@@ -24,8 +24,6 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -d -x
 #
-#/usr/lib/gnome-volume-manager/gnome-volume-manager --sm-disable
-#
 /opt/gagh/GAGH &
 EOF
 
@@ -66,7 +64,7 @@ EOF
 rm -rf /var/lib/AccountsService/users/soho
 cat > /var/lib/AccountsService/users/soho <<EOF
 [InputSource0]
-xkb=es
+xkb=us
 
 [User]
 XSession=openbox
