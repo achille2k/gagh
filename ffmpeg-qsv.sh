@@ -126,13 +126,13 @@ sudo mkdir -p /opt/records
 sudo chown soho.soho /opt/records
 
 # gagh
-cd $HOME
+cd ~
 wget -q https://github.com/achille2k/gagh/raw/main/gagh.tar.gz -O gagh.tar.gz > /dev/null 2>&1
 tar -xvzf gagh.tar.gz 
 cd gagh
 mv * /opt/gagh/
 cp /opt/gagh/config/* /opt/records/
-cd $HOME
+cd ~
 rm -rf gagh*
 
 # setup kiosk
@@ -148,9 +148,13 @@ sudo mv watermark.png /usr/share/plymouth/themes/spinner/
 sudo timedatectl set-ntp 0
 
 # auto mount usb 4 openbox
-#https://github.com/raamsri/automount-usb
+cd ~/git
+git clone https://github.com/raamsri/automount-usb
+cd automount-usb
+sudo ./CONFIGURE.sh
 
 # remove git
+cd ~
 rm -rf git
 
 # reboot
