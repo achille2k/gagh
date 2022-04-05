@@ -10,7 +10,7 @@ sudo apt install ibus-bamboo
 sudo apt install cmake make autoconf automake libtool g++ bison libpcre3-dev pkg-config libtool libdrm-dev xorg xorg-dev openbox \
 libx11-dev libgl1-mesa-glx libgl1-mesa-dev libpciaccess-dev libfdk-aac-dev libvorbis-dev libvpx-dev libx264-dev libx265-dev \
 ocl-icd-opencl-dev pkg-config yasm libx11-xcb-dev libxcb-dri3-dev libxcb-present-dev libva-dev libmfx-dev intel-media-va-driver-non-free opencl-clhpp-headers git libasound2-dev \
-libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim growisofs dvd+rw-tools
+libmp3lame-dev libpulse-dev vlc libvlc-dev v4l-utils pavucontrol vim growisofs dvd+rw-tools libmpv-dev unzip
 
 # excute sudo without pass
 echo -e '\nsoho ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers
