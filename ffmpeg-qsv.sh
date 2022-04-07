@@ -149,7 +149,7 @@ sudo timedatectl set-ntp 0
 
 # auto mount usb 4 openbox
 cd ~/git
-git clone https://github.com/raamsri/automount-usb
+git clone https://github.com/achille2k/automount-usb
 cd automount-usb
 sudo ./CONFIGURE.sh
 
