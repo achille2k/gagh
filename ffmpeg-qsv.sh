@@ -157,6 +157,9 @@ sudo ./CONFIGURE.sh
 cd ~
 rm -rf git
 
+# remove ffmpeg
+sudo apt remove ffmpeg
+
 # reboot
 sudo reboot
 

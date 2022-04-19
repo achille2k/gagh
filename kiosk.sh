@@ -22,7 +22,8 @@ cat > /etc/xdg/openbox/autostart <<EOF
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-ibus-daemon -d -x
+#ibus-daemon -d -x
+ibus-daemon -drxR
 #
 /opt/gagh/GAGH &
 EOF
